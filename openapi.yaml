@@ -43,32 +43,21 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /category/{id}:
+  /get-category/2:
     get:
       tags:
         - category
-      summary: Get Category by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+      summary: category id
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
+  /update-category/3:
     put:
       tags:
         - category
-      summary: Update Category by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+      summary: update category
       requestBody:
         content:
           application/json:
@@ -83,16 +72,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /delete-category/3:
     delete:
       tags:
         - category
-      summary: Delete Category by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+      summary: del by id
       security:
         - bearerAuth: []
       responses:
@@ -123,7 +107,7 @@ paths:
     post:
       tags:
         - auth
-      summary: User Login
+      summary: user
       requestBody:
         content:
           application/json:
@@ -141,7 +125,7 @@ paths:
     get:
       tags:
         - wallet
-      summary: Wallet
+      summary: wallet
       responses:
         '200':
           description: Successful response
@@ -151,7 +135,7 @@ paths:
     post:
       tags:
         - wallet
-      summary: Insert Wallet
+      summary: insert wallet
       requestBody:
         content:
           application/json:
@@ -168,32 +152,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /wallet/{id}:
-    get:
-      tags:
-        - wallet
-      summary: Get Wallet by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
+  /update-wallet/1:
     put:
       tags:
         - wallet
-      summary: Update Wallet by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+      summary: update wallet
       requestBody:
         content:
           application/json:
@@ -210,34 +173,33 @@ paths:
           description: Successful response
           content:
             application/json: {}
-    delete:
+  /get-wallet-user/1:
+    get:
       tags:
         - wallet
-      summary: Delete Wallet by ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-      security:
-        - bearerAuth: []
+      summary: get by id user
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /get-wallet-user/{id}:
+  /get-wallet/1:
     get:
       tags:
         - wallet
-      summary: Get Wallet by User ID
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+      summary: by wallet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /delete-wallet/2:
+    delete:
+      tags:
+        - wallet
+      summary: by id
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
