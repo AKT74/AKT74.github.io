@@ -14,13 +14,23 @@ tags:
   - name: auth
   - name: wallet
 paths:
-  /category/{categoryId}:
+  /category:
     get:
       tags:
         - category
-      summary: Get Category by ID
+      summary: Category
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /category/{id}:
+    get:
+      tags:
+        - category
+      summary: Get category by ID
       parameters:
-        - name: categoryId
+        - name: id
           in: path
           required: true
           schema:
@@ -33,9 +43,9 @@ paths:
     put:
       tags:
         - category
-      summary: Update Category by ID
+      summary: Update category by ID
       parameters:
-        - name: categoryId
+        - name: id
           in: path
           required: true
           schema:
@@ -57,9 +67,9 @@ paths:
     delete:
       tags:
         - category
-      summary: Delete Category by ID
+      summary: Delete category by ID
       parameters:
-        - name: categoryId
+        - name: id
           in: path
           required: true
           schema:
@@ -71,16 +81,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /category:
-    get:
-      tags:
-        - category
-      summary: Get All Categories
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
+  /insert-category:
     post:
       tags:
         - category
@@ -99,7 +100,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /auth/registration:
+  /registration:
     post:
       tags:
         - auth
@@ -118,7 +119,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /auth/login:
+  /login:
     post:
       tags:
         - auth
@@ -136,13 +137,23 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /wallet/{walletId}:
+  /wallet:
     get:
       tags:
         - wallet
-      summary: Get Wallet by ID
+      summary: Wallet
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /wallet/{id}:
+    get:
+      tags:
+        - wallet
+      summary: Get wallet by ID
       parameters:
-        - name: walletId
+        - name: id
           in: path
           required: true
           schema:
@@ -155,9 +166,9 @@ paths:
     put:
       tags:
         - wallet
-      summary: Update Wallet by ID
+      summary: Update wallet by ID
       parameters:
-        - name: walletId
+        - name: id
           in: path
           required: true
           schema:
@@ -181,9 +192,9 @@ paths:
     delete:
       tags:
         - wallet
-      summary: Delete Wallet by ID
+      summary: Delete wallet by ID
       parameters:
-        - name: walletId
+        - name: id
           in: path
           required: true
           schema:
@@ -195,20 +206,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /wallet:
-    get:
-      tags:
-        - wallet
-      summary: Get All Wallets
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
+  /insert-wallet:
     post:
       tags:
         - wallet
-      summary: Insert Wallet
+      summary: Insert wallet
       requestBody:
         content:
           application/json:
@@ -225,13 +227,13 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /wallet/user/{userId}:
+  /get-wallet-user/{user_id}:
     get:
       tags:
         - wallet
-      summary: Get Wallets by User ID
+      summary: Get wallet by user ID
       parameters:
-        - name: userId
+        - name: user_id
           in: path
           required: true
           schema:
