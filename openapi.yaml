@@ -43,7 +43,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /get-category/2:
+  /get-category/{categoryId}:
     get:
       tags:
         - category
@@ -53,7 +53,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /update-category/3:
+  /update-category/{categoryId}:
     put:
       tags:
         - category
@@ -72,7 +72,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /delete-category/3:
+  /delete-category/{categoryId}:
     delete:
       tags:
         - category
