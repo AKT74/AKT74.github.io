@@ -53,7 +53,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /update-category/3:
+  /update-category/4:
     put:
       tags:
         - category
