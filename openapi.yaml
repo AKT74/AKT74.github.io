@@ -43,18 +43,17 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /get-category/{id}:
+  /get-category/2:
     get:
       tags:
         - category
       summary: category id
-     
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /update-category/{id}:
+  /update-category/3:
     put:
       tags:
         - category
@@ -64,7 +63,6 @@ paths:
           application/json:
             schema:
               type: object
-             
               example:
                 wallet_name: flip
       security:
