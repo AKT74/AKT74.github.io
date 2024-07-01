@@ -78,6 +78,9 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                wallet_name:
+                  type: string
               example:
                 wallet_name: flip
       security:
