@@ -43,22 +43,37 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /get-category/2:
+  /get-category/{id}:
     get:
       tags:
         - category
       summary: category id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: 2
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /update-category/3:
+  /update-category/{id}:
     put:
       tags:
         - category
       summary: update category
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          example: 2
       requestBody:
+      required : true
         content:
           application/json:
             schema:
