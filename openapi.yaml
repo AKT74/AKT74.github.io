@@ -43,7 +43,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /get-category/{id}:
+  /get-category/2:
     get:
       tags:
         - category
