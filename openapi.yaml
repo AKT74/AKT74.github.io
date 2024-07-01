@@ -65,22 +65,13 @@ paths:
       tags:
         - category
       summary: update category
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
-          example: 2
       requestBody:
       required : true
         content:
           application/json:
             schema:
               type: object
-              properties:
-                wallet_name:
-                  type: string
+             
               example:
                 wallet_name: flip
       security:
