@@ -189,16 +189,19 @@ paths:
             schema:
               type: object
               properties:
-                wallet_id:
+                category_id:
                   type: integer
                 amount:
                   type: number
                 contact:
                   type: string
+                user_id:
+                  type: number
               example:
                 wallet_id: 5
                 amount: 130000
                 contact: 6285921240821
+                user_id: 1
       security:
         - bearerAuth: []
       responses:
